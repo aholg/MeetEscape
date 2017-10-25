@@ -11,20 +11,40 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="When do you want to be called?"
+        tools:layout_editor_absoluteY="52dp"
+        tools:layout_editor_absoluteX="94dp" />
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintVertical_bias="0.172" />
+
+    <TimePicker
+        android:id="@+id/timePicker"
+        android:layout_width="256dp"
+        android:layout_height="205dp"
+        android:timePickerMode="spinner"
+        tools:layout_editor_absoluteY="123dp"
+        tools:layout_editor_absoluteX="64dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"/>
 
     <Button
         android:id="@+id/startButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Set"
+        tools:layout_editor_absoluteY="364dp"
+        tools:layout_editor_absoluteX="148dp" />
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/startText"
-        app:layout_constraintLeft_toLeftOf="@+id/startText"
-        app:layout_constraintRight_toRightOf="@+id/startText"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintVertical_bias="0.1"
         app:layout_constraintHorizontal_bias="0.495" />
 
