@@ -14,7 +14,7 @@ public class TimerActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_timer);
 
         final Button button = (Button) findViewById(R.id.startButton);
         final TimePicker timePicker = (TimePicker) findViewById(R.id.timePicker);
