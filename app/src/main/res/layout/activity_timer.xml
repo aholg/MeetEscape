@@ -17,8 +17,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.149" />
 
-    />
-
     <TimePicker
         android:id="@+id/timePicker"
         android:layout_width="256dp"

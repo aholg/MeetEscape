@@ -1,5 +1,6 @@
 package aholg.github.com.meetescape;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,7 @@ import android.widget.Button;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.Timer;
 
 public class TimerActivity extends AppCompatActivity {
 
@@ -51,7 +53,7 @@ public class TimerActivity extends AppCompatActivity {
     }
 
     public void setTimerTo(int milliSeconds) {
-        new CountDownTimer(milliSeconds, 1000) {
+        new CountDownTimer(/*milliSeconds*/ 1, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 System.out.println("seconds remaining: " + millisUntilFinished / 1000);
@@ -59,6 +61,7 @@ public class TimerActivity extends AppCompatActivity {
 
             public void onFinish() {
                 System.out.println("done!");
+                startActivity(new Intent(TimerActivity.this, CallActivity.class));
             }
         }.start();
     }
