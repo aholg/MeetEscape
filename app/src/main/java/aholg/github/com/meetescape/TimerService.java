@@ -3,10 +3,11 @@ package aholg.github.com.meetescape;
 
 import android.content.Context;
 import android.content.Intent;
-import android.os.CountDownTimer;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class TimerService {
 
@@ -21,7 +22,7 @@ public class TimerService {
      void startTimer(TimePicker timePicker) {
         //TODO: Handle time calculation properly
         int hours= timePicker.getHour() - getTimeOf(Calendar.HOUR);
-        int minutes = timePicker.getMinute() - getTimeOf(Calendar.MINUTE) ;
+        int minutes = timePicker.getMinute() - getTimeOf(Calendar.MINUTE);
 
         int milliSeconds = convertTimeToMillis(hours, minutes);
         setTimerTo(milliSeconds);
@@ -35,17 +36,13 @@ public class TimerService {
         return hours * 60 * 60 * 1000 + minutes * 60 * 1000;
     }
 
-    public void setTimerTo(int milliSeconds) {
-        new CountDownTimer(milliSeconds, 1000) {
-
-            public void onTick(long millisUntilFinished) {
-                System.out.println("seconds remaining: " + millisUntilFinished / 1000);
-            }
-
-            public void onFinish() {
-                System.out.println("done!");
+    private void setTimerTo(int milliSeconds) {
+        new Timer().schedule(new TimerTask() {
+            @Override
+            public void run() {
                 context.startActivity(activityToStart);
+                System.out.println("done!");
             }
-        }.start();
+        }, milliSeconds);
     }
 }
